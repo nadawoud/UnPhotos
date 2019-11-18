@@ -52,7 +52,7 @@ enum UnspashEndpoint: Endpoint {
             return [
                 URLQueryItem(name: "client_id", value: id),
                 URLQueryItem(name: "order_by", value: order.rawValue),
-                URLQueryItem(name: "per_page", value: "100")
+                URLQueryItem(name: "per_page", value: "30")
             ]
         }
     }

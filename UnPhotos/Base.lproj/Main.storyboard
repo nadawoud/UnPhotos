@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--UnPhotos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UnPhotos" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e4q-0L-EKv">
                                                     <rect key="frame" x="28" y="87" width="280" height="168"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="b8x-wq-PqK">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-1" translatesAutoresizingMaskIntoConstraints="NO" id="b8x-wq-PqK">
                                                             <rect key="frame" x="0.0" y="0.0" width="348" height="343"/>
                                                         </imageView>
                                                     </subviews>
@@ -95,7 +95,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="4LC-sa-HFp"/>
+                    <navigationItem key="navigationItem" title="UnPhotos" id="4LC-sa-HFp"/>
                     <connections>
                         <outlet property="loadingActivityIndicator" destination="u2s-N0-xch" id="L5F-MN-2h7"/>
                         <outlet property="photoCollectionView" destination="LzP-HJ-1Kd" id="ymT-xk-pM4"/>
@@ -129,6 +129,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholder" width="200" height="300"/>
+        <image name="placeholder-1" width="300" height="200"/>
     </resources>
 </document>
