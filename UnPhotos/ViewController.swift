@@ -18,16 +18,20 @@ class ViewController: UIViewController {
     // MARK: Properties
     
     let viewModel = ViewModel(client: UnsplashClient())
+    let searchController = UISearchController(searchResultsController: nil)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         if let layout = photoCollectionView.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
         photoCollectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        // Init view model
+        setupSearchController()
+        
+        // Init View Model
         viewModel.showLoading = {
             if self.viewModel.isLoading {
                 self.loadingActivityIndicator.startAnimating()
@@ -47,6 +51,14 @@ class ViewController: UIViewController {
         }
         
         viewModel.fetchPhotos()
+    }
+    
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 }
 
@@ -75,6 +87,14 @@ extension ViewController: UICollectionViewDataSource {
         cell.imageView.image = image
         
         return cell
+    }
+}
+
+// MARK: Search Results Updating
+
+extension ViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
     }
 }
 
