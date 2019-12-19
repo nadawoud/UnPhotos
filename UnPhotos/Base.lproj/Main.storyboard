@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7rI-zU-5wX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--UnPhotos-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UnPhotos" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +33,7 @@
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="u2s-N0-xch">
                                         <rect key="frame" x="0.0" y="72.5" width="343" height="37"/>
-                                        <color key="color" red="0.15686274510000001" green="0.69411764710000001" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                                     </activityIndicatorView>
                                 </subviews>
                             </stackView>
@@ -96,7 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="UnPhotos" id="4LC-sa-HFp"/>
+                    <navigationItem key="navigationItem" title="Home" id="4LC-sa-HFp"/>
                     <connections>
                         <outlet property="loadingActivityIndicator" destination="u2s-N0-xch" id="L5F-MN-2h7"/>
                         <outlet property="photoCollectionView" destination="LzP-HJ-1Kd" id="ymT-xk-pM4"/>
@@ -106,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="760.79999999999995" y="182.15892053973016"/>
         </scene>
-        <!--Artist: Gilbert Kane-->
+        <!--Gilbert Kane-->
         <scene sceneID="9yk-z6-yjX">
             <objects>
                 <viewController id="Z9E-lU-zwe" customClass="DetailViewController" customModule="UnPhotos" customModuleProvider="target" sceneMemberID="viewController">
@@ -138,7 +139,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WSS-tT-zQc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Artist: Gilbert Kane" id="KWJ-95-MD1"/>
+                    <navigationItem key="navigationItem" title="Gilbert Kane" id="KWJ-95-MD1"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="fXP-9z-Fds" id="iF1-vG-9Bd"/>
                         <outlet property="imageView" destination="BZe-pI-XO8" id="h0M-OY-zQu"/>
@@ -158,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
-                            <color key="textColor" red="0.15686274510000001" green="0.69411764710000001" blue="0.75294117650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
