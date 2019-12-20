@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="760.79999999999995" y="182.15892053973016"/>
         </scene>
-        <!--Gilbert Kane-->
+        <!--Detail View Controller-->
         <scene sceneID="9yk-z6-yjX">
             <objects>
                 <viewController id="Z9E-lU-zwe" customClass="DetailViewController" customModule="UnPhotos" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,31 +115,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WOm-XK-fbE">
-                                <rect key="frame" x="16" y="16" width="343" height="635"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WOm-XK-fbE">
+                                <rect key="frame" x="16" y="96" width="343" height="475"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXP-9z-Fds">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="187.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-pI-XO8">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXP-9z-Fds">
+                                        <rect key="frame" x="0.0" y="119.5" width="343" height="355.5"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZe-pI-XO8">
-                                        <rect key="frame" x="0.0" y="202.5" width="343" height="432.5"/>
-                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="WOm-XK-fbE" firstAttribute="leading" secondItem="vd7-wi-hdB" secondAttribute="leadingMargin" id="B8s-gj-hoP"/>
-                            <constraint firstItem="WSS-tT-zQc" firstAttribute="bottom" secondItem="WOm-XK-fbE" secondAttribute="bottom" constant="16" id="NE1-fo-6eI"/>
-                            <constraint firstItem="WOm-XK-fbE" firstAttribute="centerX" secondItem="vd7-wi-hdB" secondAttribute="centerX" id="cvE-rY-c82"/>
-                            <constraint firstItem="WOm-XK-fbE" firstAttribute="centerY" secondItem="vd7-wi-hdB" secondAttribute="centerY" id="uZB-6Q-Xeg"/>
+                            <constraint firstItem="WOm-XK-fbE" firstAttribute="top" secondItem="WSS-tT-zQc" secondAttribute="top" id="9Xm-Gb-7ZL"/>
+                            <constraint firstItem="WOm-XK-fbE" firstAttribute="centerX" secondItem="vd7-wi-hdB" secondAttribute="centerX" id="LeC-yD-jej"/>
+                            <constraint firstItem="WOm-XK-fbE" firstAttribute="leading" secondItem="WSS-tT-zQc" secondAttribute="leading" constant="16" id="dE9-fa-RCN"/>
+                            <constraint firstItem="WSS-tT-zQc" firstAttribute="trailing" secondItem="WOm-XK-fbE" secondAttribute="trailing" constant="16" id="loX-ta-IIW"/>
+                            <constraint firstItem="WOm-XK-fbE" firstAttribute="centerY" secondItem="vd7-wi-hdB" secondAttribute="centerY" id="qaE-kl-IMU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WSS-tT-zQc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Gilbert Kane" id="KWJ-95-MD1"/>
+                    <navigationItem key="navigationItem" id="KWJ-95-MD1"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="fXP-9z-Fds" id="iF1-vG-9Bd"/>
                         <outlet property="imageView" destination="BZe-pI-XO8" id="h0M-OY-zQu"/>

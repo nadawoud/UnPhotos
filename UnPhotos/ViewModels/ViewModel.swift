@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CellViewModel {
+struct PhotoViewModel {
     let image: UIImage
 }
 
@@ -21,7 +21,7 @@ class ViewModel {
             self.fetchPhoto()
         }
     }
-    var cellViewModels: [CellViewModel] = []
+    var photoViewModels: [PhotoViewModel] = []
 
     // MARK: UI
 
@@ -41,7 +41,7 @@ class ViewModel {
     func fetchPhotos() {
         if let client = client as? UnsplashClient {
             self.isLoading = true
-            let endpoint = UnspashEndpoint.photos(id: UnsplashClient.apiKey, order: .latest)
+            let endpoint = ListPhotosEndpoint.photos(id: UnsplashClient.apiKey, order: .latest)
             client.fetch(with: endpoint) { (either) in
                 switch either {
                 case .success(let photos):
@@ -67,8 +67,8 @@ class ViewModel {
                     self.showError?(APIError.imageConvert)
                     return
                 }
-
-                self.cellViewModels.append(CellViewModel(image: image))
+                
+                self.photoViewModels.append(PhotoViewModel(image: image))
                 group.leave()
             }
         }

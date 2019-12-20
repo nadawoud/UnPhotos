@@ -21,6 +21,7 @@
 		6121239D238299E500AD9A9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6121239B238299E500AD9A9F /* Main.storyboard */; };
 		6121239F238299E600AD9A9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6121239E238299E600AD9A9F /* Assets.xcassets */; };
 		612123A2238299E600AD9A9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612123A0238299E600AD9A9F /* LaunchScreen.storyboard */; };
+		6194A64223ACEFFB00DA8422 /* ListPhotosEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194A64123ACEFFB00DA8422 /* ListPhotosEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		6121239E238299E600AD9A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		612123A1238299E600AD9A9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		612123A3238299E600AD9A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6194A64123ACEFFB00DA8422 /* ListPhotosEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotosEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				61124C8E2382C32F0041B21C /* APIClient.swift */,
 				61124C902382C3810041B21C /* UnsplashPhotos.swift */,
 				61124C922382C3A40041B21C /* Endpoint.swift */,
+				6194A64123ACEFFB00DA8422 /* ListPhotosEndpoint.swift */,
 				61124C942382C3D30041B21C /* UnsplashClient.swift */,
 			);
 			path = Networking;
@@ -191,6 +194,7 @@
 				61124C8C2382BF780041B21C /* PinterestLayout.swift in Sources */,
 				61124C8A2382B3EE0041B21C /* PhotoCell.swift in Sources */,
 				61124C932382C3A40041B21C /* Endpoint.swift in Sources */,
+				6194A64223ACEFFB00DA8422 /* ListPhotosEndpoint.swift in Sources */,
 				61124C952382C3D30041B21C /* UnsplashClient.swift in Sources */,
 				6121239A238299E500AD9A9F /* ViewController.swift in Sources */,
 				61212396238299E500AD9A9F /* AppDelegate.swift in Sources */,
