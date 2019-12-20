@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     // MARK: Properties
     
     let viewModel = ViewModel(client: UnsplashClient())
-    let searchController = UISearchController(searchResultsController: nil)
+//    let searchController = UISearchController(searchResultsController: nil)
     
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         }
         photoCollectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-        setupSearchController()
+//        setupSearchController()
         
         // Init View Model
         viewModel.showLoading = {
@@ -53,20 +53,20 @@ class ViewController: UIViewController {
         viewModel.fetchPhotos()
     }
     
-    func setupSearchController() {
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-    }
+//    func setupSearchController() {
+//        searchController.searchResultsUpdater = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Search"
+//        navigationItem.searchController = searchController
+//        definesPresentationContext = true
+//    }
 }
 
 // MARK: - Flow Layout Delegate
 
 extension ViewController: PinterestLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        let image = viewModel.cellViewModels[indexPath.item].image
+        let image = viewModel.photoViewModels[indexPath.item].image
         let height = image.size.height
         
         return height
@@ -77,13 +77,13 @@ extension ViewController: PinterestLayoutDelegate {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.cellViewModels.count
+        return viewModel.photoViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         
-        let image = viewModel.cellViewModels[indexPath.item].image
+        let image = viewModel.photoViewModels[indexPath.item].image
         cell.imageView.image = image
         
         return cell
@@ -92,9 +92,9 @@ extension ViewController: UICollectionViewDataSource {
 
 // MARK: Search Results Updating
 
-extension ViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO
-    }
-}
+//extension ViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        // TODO
+//    }
+//}
 
