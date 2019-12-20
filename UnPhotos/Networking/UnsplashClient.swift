@@ -12,7 +12,7 @@ class UnsplashClient: APIClient {
     static let baseUrl = "https://api.unsplash.com"
     static let apiKey = "626cff9afd8130e7f9af2d9b619ebb56bec49fe916354a219c2ed725baa8b768"
 
-    func fetch(with endpoint: UnspashEndpoint, completion: @escaping (Either<Photos>) -> Void) {
+    func fetch(with endpoint: ListPhotosEndpoint, completion: @escaping (Either<Photos>) -> Void) {
         let request = endpoint.request
         get(with: request, completion: completion)
     }
