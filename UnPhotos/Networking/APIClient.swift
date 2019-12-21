@@ -40,8 +40,10 @@ extension APIClient {
                 completion(.error(APIError.badResponse))
                 return
             }
-
-            guard let value = try? JSONDecoder().decode([T].self, from: data!) else {
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            guard let value = try? decoder.decode([T].self, from: data!) else {
                 completion(.error(APIError.jsonDecoder))
                 return
             }
