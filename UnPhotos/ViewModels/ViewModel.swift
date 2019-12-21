@@ -9,7 +9,11 @@
 import UIKit
 
 struct PhotoViewModel {
-    let image: UIImage
+    let smallImage: UIImage
+    let thmbImage: UIImage
+    let description: String?
+    let altDescription: String?
+    let artist: String
 }
 
 class ViewModel {
@@ -58,17 +62,19 @@ class ViewModel {
         self.photos.forEach { (photo) in
             DispatchQueue.global(qos: .background).async(group: group) {
                 group.enter()
-                guard let imageData = try? Data(contentsOf: photo.urls.small) else {
+                guard let imageData = try? Data(contentsOf: photo.urls.small),
+                    let thumbData = try? Data(contentsOf: photo.urls.thumb) else {
                     self.showError?(APIError.imageDownload)
                     return
                 }
 
-                guard let image = UIImage(data: imageData) else {
+                guard let image = UIImage(data: imageData),
+                    let thumb = UIImage(data: thumbData) else {
                     self.showError?(APIError.imageConvert)
                     return
                 }
                 
-                self.photoViewModels.append(PhotoViewModel(image: image))
+                self.photoViewModels.append(PhotoViewModel(smallImage: image, thmbImage: thumb,description: photo.description, altDescription: photo.altDescription, artist: photo.user.name))
                 group.leave()
             }
         }

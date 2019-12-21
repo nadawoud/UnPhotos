@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     // MARK: Properties
     
     let viewModel = ViewModel(client: UnsplashClient())
-//    let searchController = UISearchController(searchResultsController: nil)
+    //    let searchController = UISearchController(searchResultsController: nil)
     
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         }
         photoCollectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
-//        setupSearchController()
+        //        setupSearchController()
         
         // Init View Model
         viewModel.showLoading = {
@@ -53,20 +53,32 @@ class ViewController: UIViewController {
         viewModel.fetchPhotos()
     }
     
-//    func setupSearchController() {
-//        searchController.searchResultsUpdater = self
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.searchBar.placeholder = "Search"
-//        navigationItem.searchController = searchController
-//        definesPresentationContext = true
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            segue.identifier == "ShowDetailSegue",
+            let indexPath = photoCollectionView.indexPathsForSelectedItems?.first,
+            let detailViewController = segue.destination as? DetailViewController
+            else {
+                return
+        }
+        
+        detailViewController.photoModel = viewModel.photoViewModels[indexPath.item]
+    }
+    
+    //    func setupSearchController() {
+    //        searchController.searchResultsUpdater = self
+    //        searchController.obscuresBackgroundDuringPresentation = false
+    //        searchController.searchBar.placeholder = "Search"
+    //        navigationItem.searchController = searchController
+    //        definesPresentationContext = true
+    //    }
 }
 
 // MARK: - Flow Layout Delegate
 
 extension ViewController: PinterestLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        let image = viewModel.photoViewModels[indexPath.item].image
+        let image = viewModel.photoViewModels[indexPath.item].thmbImage
         let height = image.size.height
         
         return height
@@ -83,10 +95,16 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
         
-        let image = viewModel.photoViewModels[indexPath.item].image
+        let image = viewModel.photoViewModels[indexPath.item].thmbImage
         cell.imageView.image = image
         
         return cell
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }
 
