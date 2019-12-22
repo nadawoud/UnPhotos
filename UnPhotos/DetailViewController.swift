@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
         if let photoModel = photoModel,
             let detailDescriptionLabel = detailDescriptionLabel,
             let imageView = imageView {
-            detailDescriptionLabel.text = photoModel.description ?? photoModel.altDescription
+            detailDescriptionLabel.text = photoModel.description ?? photoModel.altDescription ?? "No photo description found."
             imageView.image = photoModel.smallImage
             title = photoModel.artist
         }
