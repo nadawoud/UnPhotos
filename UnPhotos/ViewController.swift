@@ -32,13 +32,13 @@ class ViewController: UIViewController {
         //        setupSearchController()
         
         // Init View Model
-        viewModel.showLoading = {
-            if self.viewModel.isLoading {
-                self.loadingActivityIndicator.startAnimating()
-                self.photoCollectionView.alpha = 0.0
+        viewModel.showLoading = { [weak self] in
+            if self!.viewModel.isLoading {
+                self!.loadingActivityIndicator.startAnimating()
+                self!.photoCollectionView.alpha = 0.0
             } else {
-                self.loadingActivityIndicator.stopAnimating()
-                self.photoCollectionView.alpha = 1.0
+                self!.loadingActivityIndicator.stopAnimating()
+                self!.photoCollectionView.alpha = 1.0
             }
         }
         
@@ -46,8 +46,8 @@ class ViewController: UIViewController {
             print(error)
         }
         
-        viewModel.reloadData = {
-            self.photoCollectionView.reloadData()
+        viewModel.reloadData = { [weak self] in
+            self!.photoCollectionView.reloadData()
         }
         
         viewModel.fetchPhotos()
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     //    }
 }
 
-// MARK: - Flow Layout Delegate
+// MARK: - FlowLayoutDelegate
 
 extension ViewController: PinterestLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
@@ -85,7 +85,7 @@ extension ViewController: PinterestLayoutDelegate {
     }
 }
 
-// MARK: Data Source
+// MARK: DataSource
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -102,13 +102,14 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - CollectionViewDelegate
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
 }
 
-// MARK: Search Results Updating
+// MARK: SearchResultsUpdating
 
 //extension ViewController: UISearchResultsUpdating {
 //    func updateSearchResults(for searchController: UISearchController) {
